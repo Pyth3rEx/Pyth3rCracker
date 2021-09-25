@@ -15,7 +15,7 @@ import RBAPG
 RBAPG=RBAPG.RuleBasedAttackPasswordGenerator()
 
 #Vars
-version = '0.01'
+version = '0.02'
 #Variables
 wordList = 'None'
 path = 'None'
@@ -86,7 +86,7 @@ def brutelist_creator(numBool, uAlBool, lAlBool, minLen, maxLen, charArray, word
         
     allZ = True #Reset allZ
     while i <= maxLen: #While max lenght not reached
-        printer(password)
+        printer(password, wordlistName)
         if password[-1] == charArray[-1]: #If last char of the password match last char of the charArray (start incrementing above)
             for a in reversed(range(len(password))): #For all letters in the password (check if last hit)
                 if password[a] == charArray[-1]: #if letter [a] of the password is the last available letter
@@ -103,7 +103,7 @@ def brutelist_creator(numBool, uAlBool, lAlBool, minLen, maxLen, charArray, word
             password[-1] = charArray[charArray.index(password[-1])+1] #Increment last char
     return
 
-def printer(password):
+def printer(password, wordlistName):
     with open(wordlistName, 'a') as f:
         print(str(password) + '\n')
         f.write(str(password) + '\n')
