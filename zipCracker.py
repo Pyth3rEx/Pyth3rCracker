@@ -27,7 +27,7 @@ password = []
 i = 0
 #Arrays
 numeral = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-uppercaseAlpha = ['a', 'b' , 'c' , 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+uppercaseAlpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 lowercaseAlpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 
@@ -105,8 +105,9 @@ def brutelist_creator(numBool, uAlBool, lAlBool, minLen, maxLen, charArray, word
 
 def printer(password, wordlistName):
     with open(wordlistName, 'a') as f:
-        print(str(password) + '\n')
-        f.write(str(password) + '\n')
+        printedPass = ''.join(password)
+        print(printedPass + '\n')
+        f.write(printedPass + '\n')
         return
 
 #Start of UI
@@ -173,6 +174,8 @@ else:
 
 #cracker
 nWords = len(list(open(wordList, "rb")))
+os.system('cls' if os.name == 'nt' else 'clear') #clear the terminal
+banner_printer()
 print('Ready to test \'' + str(nWords) + '\' passwords.')
 input()
 print('Testing...')
