@@ -22,17 +22,17 @@ lowercaseAlpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 #Variables
 minLen = 2
 maxLen = 4
-uAlphaBool = True
-lAlphaBool = True
+uAlBool = True
+lAlBool = True
 numBool = True
 charArray = []
 password = []
 i = 0
 
 #Setup character array
-if uAlphaBool == True:
+if uAlBool == True:
     charArray = charArray + uppercaseAlpha
-if lAlphaBool == True:
+if lAlBool == True:
     charArray = charArray + lowercaseAlpha
 if numBool == True:
     charArray = charArray + numeral
